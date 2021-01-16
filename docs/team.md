@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
+## Scottie Huynh
 ***UCI Net ID***: ucinetid1
 
-## USER 2
-***UCI Net ID***: ucinetid2
+## Nicholas William Hadiwijaya
+***UCI Net ID***: 94791087
 
-## USER 3
+## Jianing Tong
 ***UCI Net ID***: ucinetid3
