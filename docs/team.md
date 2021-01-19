@@ -7,10 +7,10 @@ title:  Team
 
 
 ## Scottie Huynh
-***UCI Net ID***: 84648320
+***UCI Net ID***: scottieh
 
 ## Nicholas William Hadiwijaya
-***UCI Net ID***: 94791087
+***UCI Net ID***: nhadiwij
 
 ## Jianing Tong
-***UCI Net ID***: 50419612
+***UCI Net ID***: jianingt
