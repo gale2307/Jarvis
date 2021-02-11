@@ -1,10 +1,14 @@
 import os.path
 import whoosh.index as index
+from whoosh.analysis import StandardAnalyzer
 from whoosh.fields import *
 
-#Creates index schema
-#Only content is stored in the index for the purpose of highlighting
-schema = Schema(title=TEXT, content=TEXT(stored=True), path=ID)
+#List of stopwords for the analyzer applied to page content
+stops = frozenset(['and', 'is', 'it', 'an', 'as', 'at', 'have', 'in', 'yet', 'if', 'from', 'for', 'when', 'by', 'to', 'you', 'be', 'we', 'that', 'may',
+                   'not', 'with', 'tbd', 'a', 'on', 'your', 'this', 'of', 'us', 'will', 'can', 'the', 'or', 'are', 'what', 'how', 'why'])
+
+#Creates index schema; only the title is stored, and receives increased weight
+schema = Schema(title=TEXT(stored=True,field_boost=3.0), content=TEXT(analyzer=StandardAnalyzer(stoplist=stops)), path=ID)
 
 #Creates and opens index object
 if not os.path.exists("index"):
