@@ -1,6 +1,7 @@
-import requests
 from bs4 import BeautifulSoup
 from collections import deque
+import os.path
+import requests
 import time
 
 def urltofilename(url):
@@ -102,6 +103,9 @@ banlist = ["?", "#", "/special:", "/template:", "/module:", "/user:", "talk", "/
 
 #uncomment all lines with fo to get the list of websites traversed in websites.txt
 #fo = open("websites.txt", "a")
+
+if not os.path.exists("MinecraftWiki"):
+    os.mkdir("MinecraftWiki")
 
 while url_list:
     cur_url = url_list.popleft()
