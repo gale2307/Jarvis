@@ -27,7 +27,7 @@ while(True):
         results = searcher.search(q)
         max_score = -99
         max_answer = ""
-        for i in range(10):
+        for i in range(3):
             print(results[i]['title'])
             cur_answer, cur_score = bert_class.answerfromwebpage(query, "MinecraftWiki/" + results[i]['title'], model, tokenizer)
             if cur_score > max_score:
