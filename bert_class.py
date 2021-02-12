@@ -68,6 +68,7 @@ def answer_question(question, answer_text, model, tokenizer):
     #print('Answer: "' + answer + '"')
     #print('Start: ' + str(start_max.item()))
     #print('End: ' + str(end_max.item()))
+    if "[CLS]" in answer: return answer, -10, -10
     return answer, start_max.item(), end_max.item()
 
 def answerfromwebpage(question, path, model, tokenizer):
