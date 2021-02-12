@@ -1,6 +1,4 @@
 import torch
-from transformers import BertForQuestionAnswering
-from transformers import BertTokenizer
 
 def answer_question(question, answer_text, model, tokenizer):
     '''
@@ -14,7 +12,9 @@ def answer_question(question, answer_text, model, tokenizer):
 
     # Report how long the input sequence is.
     #print('Query has {:,} tokens.\n'.format(len(input_ids)))
-    if len(input_ids > 512):
+
+    #Prevents inputs longer than 512
+    if len(input_ids) > 512:
         return "Number of tokens exceed 512", -10, -10
 
     # ======== Set Segment IDs ========
