@@ -14,6 +14,8 @@ def answer_question(question, answer_text, model, tokenizer):
 
     # Report how long the input sequence is.
     #print('Query has {:,} tokens.\n'.format(len(input_ids)))
+    if len(input_ids > 512):
+        return "Number of tokens exceed 512", -10, -10
 
     # ======== Set Segment IDs ========
     # Search the input_ids for the first instance of the `[SEP]` token.
