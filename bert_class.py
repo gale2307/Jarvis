@@ -21,6 +21,10 @@ def answer_question(question, answer_text, model, tokenizer):
     # Search the input_ids for the first instance of the `[SEP]` token.
     sep_index = input_ids.index(tokenizer.sep_token_id)
 
+    #Filters out short contexts
+    if len(input_ids) - sep_index < 10:
+        return "Context is too short", -10, -10
+
     # The number of segment A tokens includes the [SEP] token istelf.
     num_seg_a = sep_index + 1
 
