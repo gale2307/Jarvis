@@ -6,15 +6,17 @@ from whoosh.qparser import QueryParser
 from whoosh.highlight import WholeFragmenter
 import bert_class
 
-model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+#model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+#tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+model = BertForQuestionAnswering.from_pretrained('deepset/bert-large-uncased-whole-word-masking-squad2')
+tokenizer = BertTokenizer.from_pretrained('deepset/bert-large-uncased-whole-word-masking-squad2')
 
 #Opens index
 ix = index.open_dir("index")
 
 while(True):
     #Lets the user ask a query
-    query = input("JARVIS online. What would you like to know?\n")
+    query = input("\nJARVIS online. What would you like to know?\n")
     if query == "exit()":
         break
 
@@ -30,6 +32,8 @@ while(True):
         for i in range(3):
             print(results[i]['title'])
             cur_answer, cur_score = bert_class.answerfromwebpage(query, "MinecraftWiki/" + results[i]['title'], model, tokenizer)
+            print("Candidate Answer = " + cur_answer)
+            print("Candidate Score = " + str(cur_score))
             if cur_score > max_score:
                 max_score = cur_score
                 max_answer = cur_answer
