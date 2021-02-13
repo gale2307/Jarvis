@@ -22,15 +22,15 @@ For each paragraph, BERT assigns a start-score and an end-score for each token, 
 For our quantitative test, we came up with a list of 51 questions and tested individually the accuracy of our IR, of the BERT model, and lastly of the Jarvis system as a whole on these questions. The questions include general descriptions (i.e. what is a diamond), specific properties (i.e. where are villages found, what do slimes drop), and also more technical questions that are specific to the topic. One challenge we encountered when doing these tests is the fact that many of these questions have multiple answers (i.e. what are diamonds used for - diamonds can be used for crafting tools, but can also be used for trading). While we could limit the questions to ones that have only a single answer, many questions that players would ask in Minecraft are likely to fall in the other category. As such, we have a human grader decide whether or not an answer/result is right or wrong.
 
 **IR system test**  
-*test whether IR returns relevant pages*
+*test whether IR returns relevant pages*  
 ![Jarvis prototype](img/jarvis_test1.PNG)
 
 **BERT test**  
-*test whether BERT returns correct answer given relevant page*
+*test whether BERT returns correct answer given relevant page*  
 ![Jarvis prototype](img/Jarvis_test2.PNG)
 
 **Combined evaluation**  
-*Test Jarvis as a whole*
+*Test Jarvis as a whole*  
 ![Jarvis prototype](img/Jarvis_test3.PNG)
 
 From our tests, the IR system has an accuracy of roughly 64.7%, BERT has an accuracy of 58.8%, while the two integrated (Jarvis) has an overall accuracy of 45.1% - showing that there is much improvements that can still be done for both parts of the system. Overall, there is a trend that Jarvis drops in accuracy when the topic has multiple variants (such as zombies having the variants baby zombie and zombie villager).
