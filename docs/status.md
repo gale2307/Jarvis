@@ -38,7 +38,7 @@ From our tests, the IR system has an accuracy of roughly 64.7%, BERT has an accu
 *Questions about recipes such as crafting or smelting are not included since these information as expressed as images in the minecraft wikipedia, which cannot be used by Jarvis*
 
 #### Qualitative
-For our qualitative test, we made a list of queries to ensure that all of our systems were working in some way. To avoid ambiguity in our tests, we’ve chosen to make our sanity cases specifically worded queries. When asking our system these questions, we check to make sure that the IR returns pages that are at least marginally related to the query topic and that BERT, given the pages from the IR and BERT’s loaded models, is at least returning a comprehensible answer. We will continue to use any queries that Jarvis answers completely correctly as sanity tests as we improve our systems in the next few weeks.
+For our qualitative test, we used a subset of queries from our quantitative test to use as sanity cases. To avoid ambiguity in our tests, we’ve chosen the more specifically worded queries for sanity checking. When asking our system these questions, we checked to make sure that the IR returned pages that were at least marginally related to these queries and that BERT, given the pages from the IR and BERT’s loaded models, was at least returning a comprehensible answer. Most of these queries were successfully matched with at least somewhat relative pages and answers, so we would say our system is headed in the right direction. We will continue to use any queries that Jarvis answers completely correctly as sanity tests as we improve our systems in the next few weeks.
 
 
 ## Remaining Goals and Challenges
