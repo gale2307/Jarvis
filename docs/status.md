@@ -23,7 +23,7 @@ For our quantitative test, we came up with a list of 51 questions and tested ind
 
 **IR system test**  
 *test whether IR returns relevant pages*
-![Jarvis prototype](img/Jarvis_test1.PNG)
+![Jarvis prototype](img/jarvis_test1.PNG)
 
 **BERT test**  
 *test whether BERT returns correct answer given relevant page*
