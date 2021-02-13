@@ -18,3 +18,6 @@ Reports:
 - [Proposal](proposal.html)
 - [Status](status.html)
 - [Final](final.html)
+
+###Group Meetings
+Saturday 10am-12am PST
