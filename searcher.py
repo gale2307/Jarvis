@@ -17,7 +17,7 @@ while (True):
     q = qp.parse(query)
 
     #Searches index for query, returns best-matching page(s)
-    with ix.searcher(weighting=scoring.TF_IDF()) as searcher:
+    with ix.searcher(weighting=scoring.BM25F(B=0.75, content_B=1.0, K1=1.5)) as searcher:
         results = searcher.search(q)
         for i in range(10):
             print(results[i]['fullTitle'])
