@@ -1,7 +1,8 @@
+import requests
+import re
+from simhash import Simhash, SimhashIndex
 from bs4 import BeautifulSoup
 from collections import deque
-import os.path
-import requests
 import time
 
 def urltofilename(url):
@@ -90,22 +91,29 @@ def craftingrecipe(tag):
 
     return text
 
+def get_features(s):
+    width = 3
+    s = s.lower()
+    s = re.sub(r'[^\w]+', '', s)
+    return [s[i:i + width] for i in range(max(len(s) - width + 1, 1))]
+
 wiki_url = 'https://minecraft.gamepedia.com'
 my_url = 'https://minecraft.gamepedia.com/minecraft_wiki'
 
+#Set of URLs previously added into url_list
 stacked_url = set()
 stacked_url.add(my_url)
+#List of URLs to be crawled
 url_list = deque()
 url_list.append(my_url)#initialize stack
+#Set of simhashes
+simhash_set = set()
 
 #URL keywords to skip
 banlist = ["?", "#", "/special:", "/template:", "/module:", "/user:", "talk", "/category:", "list_of_gamepedia_staff", "list_of_administrators", "/file:", "/minecraft_dungeons:"]
 
 #uncomment all lines with fo to get the list of websites traversed in websites.txt
 #fo = open("websites.txt", "a")
-
-if not os.path.exists("MinecraftWiki"):
-    os.mkdir("MinecraftWiki")
 
 while url_list:
     cur_url = url_list.popleft()
@@ -134,7 +142,7 @@ while url_list:
     html_text = r.text
     soup = BeautifulSoup(html_text, 'html.parser')
 
-    #index the URL (probably can be improved)
+    #index the URL
     my_str = ""
     for tag in soup.find_all(["p", "table"]):
         if tag.name == "table":
@@ -146,10 +154,15 @@ while url_list:
         #if tag.name == li:         #how to relate it to previous text?
         #   my_str = my_str + '\n'
 
+    #if content is not empty and not a duplicate, save webpage as textfile
     if not(my_str == ""):
-        with open("MinecraftWiki/" + urltofilename(cur_url), "w", encoding='utf-8') as file:
-            file.write(my_str)
+        hash = Simhash(get_features(my_str)).value
+        if not(hash in simhash_set):
+            simhash_set.add(hash)
+            with open("MinecraftWiki/" + urltofilename(cur_url), "w", encoding='utf-8') as file:
+                file.write(my_str)
 
+    #appends all new links to url_list to be crawled later
     for link in soup.find_all('a'):
         new_url = str(link.get('href'))
         if new_url[0] == '/':
