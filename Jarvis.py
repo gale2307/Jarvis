@@ -3,7 +3,7 @@ from transformers import BertTokenizer
 import whoosh.index as index
 import whoosh.scoring as scoring
 from whoosh.searching import Searcher
-from whoosh.qparser import QueryParser
+from whoosh.qparser import MultifieldParser
 from whoosh.qparser import OrGroup
 from whoosh.highlight import WholeFragmenter
 import bert_class
@@ -26,7 +26,7 @@ while(True):
     q = qp.parse(query)
 
     #Searches index for query, returns best-matching page(s)
-    with ix.searcher(weighting=scoring.TF_IDF()) as searcher:
+    with ix.searcher(weighting=scoring.BM25F(B=0.75, content_B=1.0, K1=1.5)) as searcher:
         results = searcher.search(q)
         max_score = -99
         max_answer = ""
