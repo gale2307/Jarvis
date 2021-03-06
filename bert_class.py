@@ -1,4 +1,11 @@
 import torch
+import whoosh.index as index
+import whoosh.scoring as scoring
+from whoosh.searching import Searcher
+from whoosh.qparser import QueryParser
+from whoosh.qparser import OrGroup
+from whoosh.qparser import MultifieldParser
+from whoosh.highlight import WholeFragmenter
 
 def answer_question(question, answer_text, model, tokenizer):
     '''
@@ -88,3 +95,36 @@ def answerfromwebpage(question, path, model, tokenizer):
                 max_score = cur_start + cur_end
 
     return max_answer, max_score
+
+def get_answers(model, tokenizer, query, ix):
+    #Handles query
+    og = OrGroup.factory(0.9)
+    qp = MultifieldParser(["title", "content"], schema=ix.schema, group=og)
+    q = qp.parse(query)
+
+    #Searches index for query, returns best-matching page(s)
+    with ix.searcher(weighting=scoring.BM25F(B=0.75, content_B=1.0, K1=1.5)) as searcher:
+        results = searcher.search(q)
+        max_score = -99
+        max_answer = ""
+        for i in range(3):
+            print(results[i]['fullTitle'])
+            cur_answer, cur_score = answerfromwebpage(query, "MinecraftWiki/" + results[i]['fullTitle'], model, tokenizer)
+            if cur_score > max_score:
+                max_score = cur_score
+                max_answer = cur_answer
+    return max_answer
+
+def jarvis(model, tokenizer):
+
+    #Opens index
+    ix = index.open_dir("index")
+
+    while(True):
+        #Lets the user ask a query
+        query = input("JARVIS online. What would you like to know?\n")
+        if query == "exit()":
+            break
+
+        max_answer = get_answers(model, tokenizer, query, ix)
+        print("Answer = " + max_answer)
