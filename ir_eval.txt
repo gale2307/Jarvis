@@ -1,0 +1,50 @@
+what are cows;https_minecraft_gamepedia_com_Cow.txt
+where are cows found;https_minecraft_gamepedia_com_Cow.txt
+what do cows drop;https_minecraft_gamepedia_com_Cow.txt
+how to milk a cow;https_minecraft_gamepedia_com_Cow.txt
+what are pigs;https_minecraft_gamepedia_com_Pig.txt
+where are pigs found;https_minecraft_gamepedia_com_Pig.txt
+what do pigs drop;https_minecraft_gamepedia_com_Pig.txt
+what happens when a pig is struck by lightning;https_minecraft_gamepedia_com_Pig.txt
+what are zombies;https_minecraft_gamepedia_com_Zombie.txt
+where are zombies found;https_minecraft_gamepedia_com_Zombie.txt
+what do zombies drop;https_minecraft_gamepedia_com_Zombie.txt
+what are slimes;https_minecraft_gamepedia_com_Slime.txt
+where are slimes found;https_minecraft_gamepedia_com_Slime.txt
+what do slimes drop;https_minecraft_gamepedia_com_Slime.txt
+how do slimes move;https_minecraft_gamepedia_com_Slime.txt
+what are endermen;https_minecraft_gamepedia_com_Endermen.txt
+where are endermen found;https_minecraft_gamepedia_com_Endermen.txt
+what do enderman drop;https_minecraft_gamepedia_com_Endermen.txt
+how to provoke an enderman;https_minecraft_gamepedia_com_Endermen.txt
+what are crafting tables;https_minecraft_gamepedia_com_Crafting_Table.txt
+what are crafting tables used for;https_minecraft_gamepedia_com_Crafting_Table.txt
+what are diamond ores;https_minecraft_gamepedia_com_Diamond_ore.txt
+where are diamond ores found;https_minecraft_gamepedia_com_Diamond_ore.txt
+how to mine diamond ore;https_minecraft_gamepedia_com_Diamond_ore.txt
+what are diamonds;https_minecraft_gamepedia_com_Diamond.txt
+where are diamonds found;https_minecraft_gamepedia_com_Diamond.txt
+what are diamonds used for;https_minecraft_gamepedia_com_Diamond.txt
+what are torches;https_minecraft_gamepedia_com_Torch.txt
+what are torches used for;https_minecraft_gamepedia_com_Torch.txt
+what is the light level of a torch;https_minecraft_gamepedia_com_Torch.txt
+what are plains;https_minecraft_gamepedia_com_Plains.txt
+what may spawn in plains;https_minecraft_gamepedia_com_Plains.txt
+what are forests;https_minecraft_gamepedia_com_Forest.txt
+what may spawn in forests;https_minecraft_gamepedia_com_Forest.txt
+what are oceans;https_minecraft_gamepedia_com_Ocean.txt
+what are desert pyramids;https_minecraft_gamepedia_com_Desert_pyramid.txt
+where are desert pyramids found;https_minecraft_gamepedia_com_Desert_pyramid.txt
+what is in a desert pyramid;https_minecraft_gamepedia_com_Desert_pyramid.txt
+what are jungle pyramids;https_minecraft_gamepedia_com_Jungle_Pyramid.txt
+where are jungle pyramids found;https_minecraft_gamepedia_com_Jungle_Pyramid.txt
+what is in a jungle pyramid;https_minecraft_gamepedia_com_Jungle_Pyramid.txt
+what are villages;https_minecraft_gamepedia_com_Village.txt
+where are villages found;https_minecraft_gamepedia_com_Village.txt
+what inhabits a village;https_minecraft_gamepedia_com_Village.txt
+what are end portals;https_minecraft_gamepedia_com_End_portal.txt
+where are end portals found;https_minecraft_gamepedia_com_End_portal.txt
+what are end portals used for;https_minecraft_gamepedia_com_End_portal.txt
+how to activate an end portal;https_minecraft_gamepedia_com_End_portal.txt
+what are nether fortresses;https_minecraft_gamepedia_com_Nether_fortress.txt
+where are nether fortresses found;https_minecraft_gamepedia_com_Nether_fortress.txt
