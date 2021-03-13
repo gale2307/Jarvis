@@ -32,7 +32,7 @@ what are plains;https_minecraft_gamepedia_com_Plains.txt
 what may spawn in plains;https_minecraft_gamepedia_com_Plains.txt
 what are forests;https_minecraft_gamepedia_com_Forest.txt
 what may spawn in forests;https_minecraft_gamepedia_com_Forest.txt
-what are oceans;https_minecraft_gamepedia_com_Ocean.txt
+what are oceans;https_minecraft_gamepedia_com_Legacy_Frozen_Ocean.txt
 what are desert pyramids;https_minecraft_gamepedia_com_Desert_pyramid.txt
 where are desert pyramids found;https_minecraft_gamepedia_com_Desert_pyramid.txt
 what is in a desert pyramid;https_minecraft_gamepedia_com_Desert_pyramid.txt
