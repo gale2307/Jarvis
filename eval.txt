@@ -1,0 +1,50 @@
+what are cows|A cow is a common passive mob, source of leather, raw beef and milk|A cow is a common passive mob
+where are cows found|Cows are found in grassy biomes|Grassy biomes
+what do cows drop|Leather|Raw beef
+how to milk a cow|An adult cow can be milked by using a bucket on it|By using a bucket on it|By using a bucket
+what are pigs|A pig is a common passive mob found in grassy biomes|A pig is a common passive mob|common passive mob
+where are pigs found|A pig is a common passive mob found in grassy biomes|grassy biomes
+what do pigs drop|Pigs drop porkchops when killed|Pigs drop porkchops|Porkchops
+what happens when a pig is struck by lightning|When a pig is struck by lightning, it transforms into a zombified piglin|it transforms into a zombified piglin
+what are zombies|Zombies are common undead hostile mobs that attack players, villagers, wandering traders, iron golems, snow golems, and baby turtles|Zombies are common undead hostile mobs that attack players|Zombies are common undead hostile mobs
+where are zombies found|In the Overworld, zombies can spawn in groups of 4 on any solid block at a light level of 7 or less|on any solid block at a light level of 7 or less|In the Overworld
+what do zombies drop|When they die, zombies drop 0–2 rotten flesh|zombies drop 0–2 rotten flesh|0–2 rotten flesh|rotten flesh
+what are slimes|Slimes are bouncy, cube-shaped, hostile mobs that spawn in the swamp and, occasionally, deep underground in particular chunks called slime chunks|Slimes are bouncy, cube-shaped, hostile mobs that spawn in the swamp|Slimes are bouncy, cube-shaped, hostile mobs
+where are slimes found|swamp biomes and, occasionally, deep underground in particular chunks called slime chunks|swamp biomes|deep underground in particular chunks called slime chunks
+what do slimes drop|it drops 0-2 slimeballs|0-2 slimeballs|Slimeballs
+how do slimes move|Slimes move by hopping|by hopping
+what are endermen|Endermen are tall, black neutral mobs from the End that have the ability to teleport and pick up blocks|Endermen are tall, black neutral mobs from the End that have the ability to teleport|Endermen are tall, black neutral mobs from the End|Endermen are tall, black neutral mobs
+where are endermen found|Endermen are found on the end ships floating about the end cities|Endermen are found on the end ships|End|in areas with light level 7 or less (11 or less in the End) on any solid surface having at least three empty spaces above|in areas with light level 7 or less
+what do enderman drop|Endermen now drop the block they are holding when killed|the block they are holding when killed|the block they are holding|Ender pearl
+how to provoke an enderman|An Enderman can be provoked by a player or other mob attacking them or by a player looking them in the eyes|by a player or other mob attacking them|attacking them|by a player looking them in the eyes|looking them in the eyes
+what are crafting tables|A crafting table allows the player to craft a variety of blocks and items|allows the player to craft a variety of blocks and items
+what are crafting tables used for|allows the player to craft many more items than are available with the crafting grid in the inventory|allows the player to craft many more items|A crafting table allows the player to craft a variety of blocks and items|allows the player to craft a variety of blocks and items|A crafting table can be used to repair damaged tools, weapons, and armor|repair damaged tools, weapons, and armor.
+what are diamond ores|Diamond ore is a rare ore that generates deep underground, and is the only reliable source of diamonds.|Diamond ore is a rare ore that generates deep underground|a rare ore that generates deep underground
+where are diamond ores found|deep underground|diamonds now spawn from y16 to y-63|Diamond ore attempts to generate 1 time per chunk in veins of 1-10 ore, between altitudes 1 and 16 (in layers 1-15), in all biomes|between altitudes 1 and 16 (in layers 1-15), in all biomes
+how to mine diamond ore|by mining it with an iron, diamond or netherite pickaxe
+what are diamonds|A diamond is a rare mineral obtained from diamond ore or loot chests|a rare mineral obtained from diamond ore or loot chests|a rare mineral
+where are diamonds found|from diamond ore or loot chests
+what are diamonds used for|They are mainly used to craft high-tier tools and armor, enchanting tables, blocks of diamond, and jukeboxes|to craft high-tier tools and armor, enchanting tables, blocks of diamond, and jukeboxes|Diamonds are mainly used to craft high-tier armor and equipment|to craft high-tier armor and equipment
+what are torches|Torches are non-solid blocks that emit light|non-solid blocks that emit light
+what are torches used for|to craft jack o'lanterns|to craft lanterns|to craft underwater torches and colored torches
+what is the light level of a torch|Torches give off a light level of 14|14
+what are plains|Plains are temperate grasslands biomes|temperate grasslands biomes
+what may spawn in plains|Horses spawn in plains biomes|Donkeys
+what are forests|Forests are temperate biomes|temperate biomes
+what may spawn in forests|Wolves may spawn here|Wolves
+what are oceans|The ocean is a common aquatic biome consisting predominantly of water|a common aquatic biome consisting predominantly of water
+what are desert pyramids|A desert pyramid (formerly desert temple) is a sandstone structure that generates naturally in deserts|a sandstone structure that generates naturally in deserts
+where are desert pyramids found|in deserts|deserts
+what is in a desert pyramid|Each pyramid has a hidden chamber containing loot that is protected by a TNT trap|a hidden chamber containing loot that is protected by a TNT trap|a hidden chamber containing loot
+what are jungle pyramids|Jungle pyramids‌[JE only] or jungle temples‌[BE only] are structures found in jungles|structures found in jungles
+where are jungle pyramids found|in jungles|jungles
+what is in a jungle pyramid|cobblestone, mossy cobblestone, and some vines|Loot chest
+what are villages|A village is a group or complex of buildings and other structures that generate naturally in the Overworld|a group or complex of buildings and other structures that generate naturally in the Overworld|a group or complex of buildings and other structures
+where are villages found|Villages generate naturally in plains, savanna, taiga, snowy tundra, and desert biomes|in plains, savanna, taiga, snowy tundra, and desert biomes
+what inhabits a village|A village is inhabited by villagers, cats, iron golems, passive livestock mobs, occasional zombie villagers, and wandering traders with their trader llamas|villagers, cats, iron golems, passive livestock mobs, occasional zombie villagers, and wandering traders with their trader llamas
+what are end portals|An end portal is a naturally occurring generated structure that is used to travel into the End|a naturally occurring generated structure that is used to travel into the End
+where are end portals found|It can only be found in the portal room of a stronghold|in the portal room of a stronghold
+what are end portals used for|to travel into the End
+how to activate an end portal|The portal is activated when an eye of ender has been placed in each of the end portal frame blocks
+what are nether fortresses|A Nether fortress, or simply fortress, is a large complex of bridges, corridors, and towers found in the Nether|a large complex of bridges, corridors, and towers found in the Nether
+where are nether fortresses found|In the nether|nether
