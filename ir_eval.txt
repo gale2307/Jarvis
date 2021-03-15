@@ -17,10 +17,11 @@ what are endermen;https_minecraft_gamepedia_com_Endermen.txt
 where are endermen found;https_minecraft_gamepedia_com_Endermen.txt
 what do enderman drop;https_minecraft_gamepedia_com_Endermen.txt
 how to provoke an enderman;https_minecraft_gamepedia_com_Endermen.txt
-what are crafting tables;https_minecraft_gamepedia_com_Crafting_Table.txt
-what are crafting tables used for;https_minecraft_gamepedia_com_Crafting_Table.txt
+what are crafting tables;https_minecraft_gamepedia_com_Workbench.txt
+what are crafting tables used for;https_minecraft_gamepedia_com_Workbench.txt
 what are diamond ores;https_minecraft_gamepedia_com_Diamond_ore.txt
 where are diamond ores found;https_minecraft_gamepedia_com_Diamond_ore.txt
+what do diamond ores drop;https_minecraft_gamepedia_com_Diamond_ore.txt
 how to mine diamond ore;https_minecraft_gamepedia_com_Diamond_ore.txt
 what are diamonds;https_minecraft_gamepedia_com_Diamond.txt
 where are diamonds found;https_minecraft_gamepedia_com_Diamond.txt

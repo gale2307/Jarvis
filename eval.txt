@@ -21,6 +21,7 @@ what are crafting tables|A crafting table allows the player to craft a variety o
 what are crafting tables used for|allows the player to craft many more items than are available with the crafting grid in the inventory|allows the player to craft many more items|A crafting table allows the player to craft a variety of blocks and items|allows the player to craft a variety of blocks and items|A crafting table can be used to repair damaged tools, weapons, and armor|repair damaged tools, weapons, and armor.
 what are diamond ores|Diamond ore is a rare ore that generates deep underground, and is the only reliable source of diamonds.|Diamond ore is a rare ore that generates deep underground|a rare ore that generates deep underground
 where are diamond ores found|deep underground|diamonds now spawn from y16 to y-63|Diamond ore attempts to generate 1 time per chunk in veins of 1-10 ore, between altitudes 1 and 16 (in layers 1-15), in all biomes|between altitudes 1 and 16 (in layers 1-15), in all biomes
+what do diamond ores drop|a single diamond|Diamond|diamonds
 how to mine diamond ore|by mining it with an iron, diamond or netherite pickaxe|use an iron , diamond , or netherite pickaxe to break the blocks
 what are diamonds|A diamond is a rare mineral obtained from diamond ore or loot chests|a rare mineral obtained from diamond ore or loot chests|a rare mineral
 where are diamonds found|from diamond ore or loot chests|diamond ore or loot chests
