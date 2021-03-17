@@ -18,7 +18,7 @@ def answer_question(question, answer_text, model, tokenizer):
     input_ids = tokenizer.encode(question, answer_text)
 
     # Report how long the input sequence is.
-    print('Query has {:,} tokens.\n'.format(len(input_ids)))
+    #print('Query has {:,} tokens.\n'.format(len(input_ids)))
 
     #Prevents inputs longer than 512
     if len(input_ids) > 512:
@@ -47,7 +47,10 @@ def answer_question(question, answer_text, model, tokenizer):
     # ======== Evaluate ========
     # Run our example question through the model.
     # The problem is somewhere around here, to do with token_type_ids
-    start_scores, end_scores = model(torch.tensor([input_ids]))#, token_type_ids=torch.tensor([segment_ids])) # The segment IDs to differentiate question from answer_text
+    outputs = model(torch.tensor([input_ids]))#, token_type_ids=torch.tensor([segment_ids])) # The segment IDs to differentiate question from answer_text
+
+    start_scores = outputs.start_logits
+    end_scores = outputs.end_logits
 
     # ======== Reconstruct Answer ========
     # Find the tokens with the highest `start` and `end` scores.
@@ -55,27 +58,29 @@ def answer_question(question, answer_text, model, tokenizer):
     answer_end = torch.argmax(end_scores)
     start_max = torch.max(start_scores)
     end_max = torch.max(end_scores)
-
+    
     # Get the string versions of the input tokens.
     tokens = tokenizer.convert_ids_to_tokens(input_ids)
 
     # Start with the first token.
-    answer = tokens[answer_start]
+    if tokens[answer_start][0] == 'Ġ':
+        answer = tokens[answer_start][1:]
+    else:
+        answer = tokens[answer_start]
 
     # Select the remaining answer tokens and join them with whitespace.
     for i in range(answer_start + 1, answer_end + 1):
+        #answer += ' ' + tokens[i]
         
         # If it's a subword token, then recombine it with the previous token.
-        if tokens[i][0:2] == '##':
-            answer += tokens[i][2:]
-        
-        # Otherwise, add a space then the token.
+        if tokens[i][0] == 'Ġ':
+            answer += ' ' + tokens[i][1:]  
+        # Otherwise, add a space then the token.â
+        elif tokens[i][0] == 'â':
+            answer += '-'
         else:
-            answer += ' ' + tokens[i]
+            answer += tokens[i]
 
-    #print('Answer: "' + answer + '"')
-    #print('Start: ' + str(start_max.item()))
-    #print('End: ' + str(end_max.item()))
     if "[CLS]" in answer: return answer, -10, -10
     return answer, start_max.item(), end_max.item()
 
@@ -87,10 +92,10 @@ def answerfromwebpage(question, path, model, tokenizer):
     with open(path, "r", encoding='utf-8') as f:
         for context in f:
             cur_answer, cur_start, cur_end = answer_question(question, context, model, tokenizer)
-            print("Context: " + context)
-            print('Answer: "' + cur_answer + '"')
-            print('Start: ' + str(cur_start))
-            print('End: ' + str(cur_end))
+            #print("Context: " + context)
+            #print('Answer: "' + cur_answer + '"')
+            #print('Start: ' + str(cur_start))
+            #print('End: ' + str(cur_end))
             if max_score < (cur_start + cur_end):
                 max_answer = cur_answer
                 max_score = cur_start + cur_end
