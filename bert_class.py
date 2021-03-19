@@ -7,15 +7,10 @@ from whoosh.qparser import OrGroup
 from whoosh.qparser import MultifieldParser
 from whoosh.highlight import WholeFragmenter
 
-def answer_question(question, answer_text, model, tokenizer):
-    '''
-    Takes a `question` string and an `answer_text` string (which contains the
-    answer), and identifies the words within the `answer_text` that are the
-    answer. Prints them out.
-    '''
+def answer_question(question, input_ids, model, tokenizer):
     # ======== Tokenize ========
     # Apply the tokenizer to the input text, treating them as a text-pair.
-    input_ids = tokenizer.encode(question, answer_text)
+    #input_ids = tokenizer.encode(question, answer_text)
 
     # Report how long the input sequence is.
     #print('Query has {:,} tokens.\n'.format(len(input_ids)))
@@ -46,7 +41,10 @@ def answer_question(question, answer_text, model, tokenizer):
 
     # ======== Evaluate ========
     # Run our example question through the model.
-    start_scores, end_scores = model(torch.tensor([input_ids]), token_type_ids=torch.tensor([segment_ids])) # The segment IDs to differentiate question from answer_text
+    outputs = model(torch.tensor([input_ids]), token_type_ids=torch.tensor([segment_ids])) # The segment IDs to differentiate question from answer_text
+
+    start_scores = outputs.start_logits
+    end_scores = outputs.end_logits
 
     # ======== Reconstruct Answer ========
     # Find the tokens with the highest `start` and `end` scores.
@@ -84,12 +82,36 @@ def answerfromwebpage(question, path, model, tokenizer):
     max_answer = ""
 
     with open(path, "r", encoding='utf-8') as f:
+        context_string = ""
         for context in f:
-            cur_answer, cur_start, cur_end = answer_question(question, context, model, tokenizer)
-            #print("Context: " + context)
-            #print('Answer: "' + cur_answer + '"')
-            #print('Start: ' + str(cur_start))
-            #print('End: ' + str(cur_end))
+            if len(tokenizer.encode(question, context)) > 512: continue
+
+            input_tokens = tokenizer.encode(question, context_string + context)
+            context_string += context
+            #print("CONTEXT: " + context)
+            #print("CONTEXT STRING: " + context_string)
+
+            if len(input_tokens) > 200:
+                #input_tokens = tokenizer.encode(question, context_string)
+                #print("Context: " + context_string)
+                cur_answer, cur_start, cur_end = answer_question(question, input_tokens, model, tokenizer)
+                #print("Context: " + context)
+                #print('Answer: "' + cur_answer + '"')
+                #print('Start: ' + str(cur_start))
+                #print('End: ' + str(cur_end))
+                if max_score < (cur_start + cur_end):
+                    max_answer = cur_answer
+                    max_score = cur_start + cur_end
+
+
+                context_string = ""
+
+            #context_string += context
+
+        if not(context_string == ""):
+            input_tokens = tokenizer.encode(question, context_string)
+            #print("Context: " + context_string)
+            cur_answer, cur_start, cur_end = answer_question(question, input_tokens, model, tokenizer)
             if max_score < (cur_start + cur_end):
                 max_answer = cur_answer
                 max_score = cur_start + cur_end
@@ -107,9 +129,15 @@ def get_answers(model, tokenizer, query, ix):
         results = searcher.search(q)
         max_score = -99
         max_answer = ""
+        weight_mult = 1
+        weight_red = 0
         for i in range(3):
             print(results[i]['fullTitle'])
             cur_answer, cur_score = answerfromwebpage(query, "MinecraftWiki/" + results[i]['fullTitle'], model, tokenizer)
+            print(cur_answer)
+            print("score: " + str(cur_score))
+            cur_score = cur_score*weight_mult
+            weight_mult = weight_mult - weight_red
             if cur_score > max_score:
                 max_score = cur_score
                 max_answer = cur_answer
