@@ -1,6 +1,5 @@
 what are cows|https_minecraft_gamepedia_com_Cow.txt|A cow is a common passive mob, source of leather, raw beef and milk|A cow is a common passive mob
 where are cows found|https_minecraft_gamepedia_com_Cow.txt|Cows are found in grassy biomes|Grassy biomes
-what do cows drop|https_minecraft_gamepedia_com_Cow.txt|Leather|Raw beef|0 – 2 leather items and 1 – 3 raw beef items
 how to milk a cow|https_minecraft_gamepedia_com_Cow.txt|An adult cow can be milked by using a bucket on it|By using a bucket on it|By using a bucket
 what are pigs|https_minecraft_gamepedia_com_Pig.txt|A pig is a common passive mob found in grassy biomes|A pig is a common passive mob|common passive mob
 where are pigs found|https_minecraft_gamepedia_com_Pig.txt|A pig is a common passive mob found in grassy biomes|grassy biomes
@@ -9,8 +8,9 @@ what happens when a pig is struck by lightning|https_minecraft_gamepedia_com_Pig
 what are zombies|https_minecraft_gamepedia_com_Zombie.txt|Zombies are common undead hostile mobs that attack players, villagers, wandering traders, iron golems, snow golems, and baby turtles|Zombies are common undead hostile mobs that attack players|Zombies are common undead hostile mobs|zombies are undead mobs
 where are zombies found|https_minecraft_gamepedia_com_Zombie.txt|In the Overworld, zombies can spawn in groups of 4 on any solid block at a light level of 7 or less|on any solid block at a light level of 7 or less|In the Overworld
 what do zombies drop|https_minecraft_gamepedia_com_Zombie.txt|When they die, zombies drop 0 - 2 rotten flesh|zombies drop 0 - 2 rotten flesh|0 - 2 rotten flesh|rotten flesh
+how do zombies transform into the drowned|https_minecraft_gamepedia_com_Zombie.txt|If a zombie's head is submerged in water for 30 seconds, it begins converting into a drowned|If a zombie's head is submerged in water for 30 seconds
 what are slimes|https_minecraft_gamepedia_com_Slime.txt|Slimes are bouncy, cube-shaped, hostile mobs that spawn in the swamp and, occasionally, deep underground in particular chunks called slime chunks|Slimes are bouncy, cube-shaped, hostile mobs that spawn in the swamp|Slimes are bouncy, cube-shaped, hostile mobs
-where are slimes found|https_minecraft_gamepedia_com_Slime.txt|swamp biomes and, occasionally, deep underground in particular chunks called slime chunks|swamp biomes|deep underground in particular chunks called slime chunks
+where are slimes found|https_minecraft_gamepedia_com_Slime.txt|swamp biomes and, occasionally, deep underground in particular chunks called slime chunks|swamp biomes|deep underground in particular chunks called slime chunks|slime chunks
 what do slimes drop|https_minecraft_gamepedia_com_Slime.txt|it drops 0 - 2 slimeballs|0 - 2 slimeballs|Slimeballs
 how do slimes move|https_minecraft_gamepedia_com_Slime.txt|Slimes move by hopping|by hopping
 what are endermen|https_minecraft_gamepedia_com_Endermen.txt|Endermen are tall, black neutral mobs from the End that have the ability to teleport and pick up blocks|Endermen are tall, black neutral mobs from the End that have the ability to teleport|Endermen are tall, black neutral mobs from the End|Endermen are tall, black neutral mobs
@@ -25,22 +25,21 @@ what do diamond ores drop|a single diamond|Diamond|diamonds
 how to mine diamond ore|https_minecraft_gamepedia_com_Diamond_ore.txt|by mining it with an iron, diamond or netherite pickaxe|use an iron , diamond , or netherite pickaxe to break the blocks
 what are diamonds|https_minecraft_gamepedia_com_Diamond.txt|A diamond is a rare mineral obtained from diamond ore or loot chests|a rare mineral obtained from diamond ore or loot chests|a rare mineral
 where are diamonds found|https_minecraft_gamepedia_com_Diamond.txt|from diamond ore or loot chests|diamond ore or loot chests
-what do diamond ores drop|https_minecraft_gamepedia_com_Diamond_ore.txt|a single diamond|Diamond|diamonds
 what are diamonds used for|https_minecraft_gamepedia_com_Diamond.txt|They are mainly used to craft high-tier tools and armor, enchanting tables, blocks of diamond, and jukeboxes|to craft high-tier tools and armor, enchanting tables, blocks of diamond, and jukeboxes|Diamonds are mainly used to craft high-tier armor and equipment|to craft high-tier armor and equipment|to trade with villagers
 what are torches|https_minecraft_gamepedia_com_Torch.txt|Torches are non-solid blocks that emit light|non-solid blocks that emit light
-what are torches used for|https_minecraft_gamepedia_com_Torch.txt|to craft jack o'lanterns|to craft lanterns|to craft underwater torches and colored torches
 what is the light level of a torch|https_minecraft_gamepedia_com_Torch.txt|Torches give off a light level of 14|14
 what are plains|https_minecraft_gamepedia_com_Plains.txt|Plains are temperate grasslands biomes|temperate grasslands biomes|plains are grassy and mostly flat|grassy and mostly flat
-what may spawn in plains|https_minecraft_gamepedia_com_Plains.txt|Horses spawn in plains biomes|horses|Donkeys
+what can spawn in plains|https_minecraft_gamepedia_com_Plains.txt|Horses spawn in plains biomes|horses|Donkeys
 what are forests|https_minecraft_gamepedia_com_Forest.txt|Forests are temperate biomes|temperate biomes
-what may spawn in forests|https_minecraft_gamepedia_com_Forest.txt|Wolves may spawn here|Wolves
+what can spawn in forests|https_minecraft_gamepedia_com_Forest.txt|Wolves may spawn here|Wolves
 what are oceans|https_minecraft_gamepedia_com_Legacy_Frozen_Ocean.txt|The ocean is a common aquatic biome consisting predominantly of water|a common aquatic biome consisting predominantly of water|oceans are vast expanses of water
+what is the depth of the ocean floor|https_minecraft_gamepedia_com_Legacy_Frozen_Ocean.txt|roughly Y=45|Y=45
 what are desert pyramids|https_minecraft_gamepedia_com_Desert_pyramid.txt|A desert pyramid (formerly desert temple) is a sandstone structure that generates naturally in deserts|a sandstone structure that generates naturally in deserts
 where are desert pyramids found|https_minecraft_gamepedia_com_Desert_pyramid.txt|in deserts|deserts
 what is in a desert pyramid|https_minecraft_gamepedia_com_Desert_pyramid.txt|Each pyramid has a hidden chamber containing loot that is protected by a TNT trap|a hidden chamber containing loot that is protected by a TNT trap|a hidden chamber containing loot
 what are jungle pyramids|https_minecraft_gamepedia_com_Jungle_Pyramid.txt|Jungle pyramids‌[JE only] or jungle temples‌[BE only] are structures found in jungles|structures found in jungles
 where are jungle pyramids found|https_minecraft_gamepedia_com_Jungle_Pyramid.txt|in jungles|jungles
-what is in a jungle pyramid|https_minecraft_gamepedia_com_Jungle_Pyramid.txt|cobblestone, mossy cobblestone, and some vines|Loot chest
+how many floors do jungle pyramids have|https_minecraft_gamepedia_com_Jungle_Pyramid.txt|3 floors|3
 what are villages|https_minecraft_gamepedia_com_Village.txt|A village is a group or complex of buildings and other structures that generate naturally in the Overworld|a group or complex of buildings and other structures that generate naturally in the Overworld|a group or complex of buildings and other structures
 where are villages found|https_minecraft_gamepedia_com_Village.txt|Villages generate naturally in plains, savanna, taiga, snowy tundra, and desert biomes|in plains, savanna, taiga, snowy tundra, and desert biomes
 what inhabits a village|https_minecraft_gamepedia_com_Village.txt|A village is inhabited by villagers, cats, iron golems, passive livestock mobs, occasional zombie villagers, and wandering traders with their trader llamas|villagers, cats, iron golems, passive livestock mobs, occasional zombie villagers, and wandering traders with their trader llamas

@@ -1,6 +1,5 @@
 what are cows;https_minecraft_gamepedia_com_Cow.txt
 where are cows found;https_minecraft_gamepedia_com_Cow.txt
-what do cows drop;https_minecraft_gamepedia_com_Cow.txt
 how to milk a cow;https_minecraft_gamepedia_com_Cow.txt
 what are pigs;https_minecraft_gamepedia_com_Pig.txt
 where are pigs found;https_minecraft_gamepedia_com_Pig.txt
@@ -9,6 +8,7 @@ what happens when a pig is struck by lightning;https_minecraft_gamepedia_com_Pig
 what are zombies;https_minecraft_gamepedia_com_Zombie.txt
 where are zombies found;https_minecraft_gamepedia_com_Zombie.txt
 what do zombies drop;https_minecraft_gamepedia_com_Zombie.txt
+how do zombies transform into the drowned;https_minecraft_gamepedia_com_Zombie.txt
 what are slimes;https_minecraft_gamepedia_com_Slime.txt
 where are slimes found;https_minecraft_gamepedia_com_Slime.txt
 what do slimes drop;https_minecraft_gamepedia_com_Slime.txt
@@ -27,19 +27,19 @@ what are diamonds;https_minecraft_gamepedia_com_Diamond.txt
 where are diamonds found;https_minecraft_gamepedia_com_Diamond.txt
 what are diamonds used for;https_minecraft_gamepedia_com_Diamond.txt
 what are torches;https_minecraft_gamepedia_com_Torch.txt
-what are torches used for;https_minecraft_gamepedia_com_Torch.txt
 what is the light level of a torch;https_minecraft_gamepedia_com_Torch.txt
 what are plains;https_minecraft_gamepedia_com_Plains.txt
-what may spawn in plains;https_minecraft_gamepedia_com_Plains.txt
+what can spawn in plains;https_minecraft_gamepedia_com_Plains.txt
 what are forests;https_minecraft_gamepedia_com_Forest.txt
-what may spawn in forests;https_minecraft_gamepedia_com_Forest.txt
+what can spawn in forests;https_minecraft_gamepedia_com_Forest.txt
 what are oceans;https_minecraft_gamepedia_com_Legacy_Frozen_Ocean.txt
+what is the depth of the ocean floor;https_minecraft_gamepedia_com_Legacy_Frozen_Ocean.txt
 what are desert pyramids;https_minecraft_gamepedia_com_Desert_pyramid.txt
 where are desert pyramids found;https_minecraft_gamepedia_com_Desert_pyramid.txt
 what is in a desert pyramid;https_minecraft_gamepedia_com_Desert_pyramid.txt
 what are jungle pyramids;https_minecraft_gamepedia_com_Jungle_Pyramid.txt
 where are jungle pyramids found;https_minecraft_gamepedia_com_Jungle_Pyramid.txt
-what is in a jungle pyramid;https_minecraft_gamepedia_com_Jungle_Pyramid.txt
+how many floors do jungle pyramids have;https_minecraft_gamepedia_com_Jungle_Pyramid.txt
 what are villages;https_minecraft_gamepedia_com_Village.txt
 where are villages found;https_minecraft_gamepedia_com_Village.txt
 what inhabits a village;https_minecraft_gamepedia_com_Village.txt
