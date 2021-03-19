@@ -16,6 +16,8 @@ with open("eval.txt", "r") as file:
     for line in file: #add while loop
 
         question, answers = line.split('|', 1)
+        if answers[-1:]=='\n': 
+            answers = answers[:-1]
         gold_answers = answers.split('|')
 
         print("question: " + question)
