@@ -7,7 +7,7 @@ from whoosh.qparser import OrGroup
 from whoosh.qparser import MultifieldParser
 from whoosh.highlight import WholeFragmenter
 
-def answer_question(question, answer_text, model, tokenizer):
+def answer_question(question, input_ids, model, tokenizer):
     '''
     Takes a `question` string and an `answer_text` string (which contains the
     answer), and identifies the words within the `answer_text` that are the
@@ -15,7 +15,7 @@ def answer_question(question, answer_text, model, tokenizer):
     '''
     # ======== Tokenize ========
     # Apply the tokenizer to the input text, treating them as a text-pair.
-    input_ids = tokenizer.encode(question, answer_text)
+    #input_ids = tokenizer.encode(question, answer_text)
 
     # Report how long the input sequence is.
     #print('Query has {:,} tokens.\n'.format(len(input_ids)))
@@ -90,12 +90,36 @@ def answerfromwebpage(question, path, model, tokenizer):
     max_answer = ""
 
     with open(path, "r", encoding='utf-8') as f:
+        context_string = ""
         for context in f:
-            cur_answer, cur_start, cur_end = answer_question(question, context, model, tokenizer)
-            #print("Context: " + context)
-            #print('Answer: "' + cur_answer + '"')
-            #print('Start: ' + str(cur_start))
-            #print('End: ' + str(cur_end))
+            if len(tokenizer.encode(question, context)) > 512: continue
+
+            input_tokens = tokenizer.encode(question, context_string + context)
+            context_string += context
+            #print("CONTEXT: " + context)
+            #print("CONTEXT STRING: " + context_string)
+
+            if len(input_tokens) > 0:
+                #input_tokens = tokenizer.encode(question, context_string)
+                #print("Context: " + context_string)
+                cur_answer, cur_start, cur_end = answer_question(question, input_tokens, model, tokenizer)
+                #print("Context: " + context)
+                #print('Answer: "' + cur_answer + '"')
+                #print('Start: ' + str(cur_start))
+                #print('End: ' + str(cur_end))
+                if max_score < (cur_start + cur_end):
+                    max_answer = cur_answer
+                    max_score = cur_start + cur_end
+
+
+                context_string = ""
+
+            #context_string += context
+
+        if not(context_string == ""):
+            input_tokens = tokenizer.encode(question, context_string)
+            #print("Context: " + context_string)
+            cur_answer, cur_start, cur_end = answer_question(question, input_tokens, model, tokenizer)
             if max_score < (cur_start + cur_end):
                 max_answer = cur_answer
                 max_score = cur_start + cur_end
