@@ -30,7 +30,7 @@ what are torches|Torches are non-solid blocks that emit light|non-solid blocks t
 what is the light level of a torch|Torches give off a light level of 14|14
 what are plains|Plains are temperate grasslands biomes|temperate grasslands biomes|plains are grassy and mostly flat|grassy and mostly flat
 what can spawn in plains|Horses spawn in plains biomes|Horses|Donkeys
-what are forests|Forests are temperate biomes|temperate biomes
+what are forests|Forests are temperate biomes|temperate biomes|a common biome with many trees
 what can spawn in forests|Wolves may spawn here|Wolves
 what are oceans|The ocean is a common aquatic biome consisting predominantly of water|a common aquatic biome consisting predominantly of water|oceans are vast expanses of water|vast expanses of water
 what is the depth of the ocean floor|roughly Y=45|Y=45|y = 45
