@@ -49,8 +49,8 @@ def compute_exact(a_pred: str, a_gold: str) -> int:
 
 
 def compute_f1(a_pred: str, a_gold: str) -> float:
-    pred_toks = get_tokens(a_pred)
-    gold_toks = get_tokens(a_gold)
+    pred_toks = get_tokens(normalize_answer(a_pred))
+    gold_toks = get_tokens(normalize_answer(a_gold))
     common = collections.Counter(pred_toks) & collections.Counter(gold_toks)  # type: ignore[var-annotated]
     num_same = sum(common.values())
     if len(pred_toks) == 0 or len(gold_toks) == 0:
@@ -83,17 +83,3 @@ def get_metric_score(prediction: str, gold_answers: Sequence[str]) -> Tuple[int,
     exact_scores = metric_max_over_ground_truths(compute_exact, prediction, gold_answers)
     f1_scores = metric_max_over_ground_truths(compute_f1, prediction, gold_answers)
     return exact_scores, f1_scores
-
-
-#gold = []
-
-#s1 = input("Pred string:")
-#s2 = input("Gold string:")
-#gold.append(s2)
-#while(True):
-#    s2 = input("Gold string:")
-#    if s2=='exit': break
-#    gold.append(s2)
-
-#print(compute_f1(s1, gold[0]))
-#print(get_metric_score(s1, gold))
