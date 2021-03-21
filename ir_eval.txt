@@ -15,7 +15,7 @@ what do slimes drop;https_minecraft_gamepedia_com_Slime.txt
 how do slimes move;https_minecraft_gamepedia_com_Slime.txt
 what are endermen;https_minecraft_gamepedia_com_Endermen.txt
 where are endermen found;https_minecraft_gamepedia_com_Endermen.txt
-what do enderman drop;https_minecraft_gamepedia_com_Endermen.txt
+what do endermen drop;https_minecraft_gamepedia_com_Endermen.txt
 how to provoke an enderman;https_minecraft_gamepedia_com_Endermen.txt
 what are crafting tables;https_minecraft_gamepedia_com_Workbench.txt
 what are crafting tables used for;https_minecraft_gamepedia_com_Workbench.txt
