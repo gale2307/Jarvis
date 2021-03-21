@@ -91,7 +91,7 @@ def answerfromwebpage(question, path, model, tokenizer):
             #print("CONTEXT: " + context)
             #print("CONTEXT STRING: " + context_string)
 
-            if len(input_tokens) > 200:
+            if len(input_tokens) > 0:
                 #input_tokens = tokenizer.encode(question, context_string)
                 #print("Context: " + context_string)
                 cur_answer, cur_start, cur_end = answer_question(question, input_tokens, model, tokenizer)
