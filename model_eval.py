@@ -1,5 +1,6 @@
 from transformers import BertForQuestionAnswering
 from transformers import BertTokenizer
+import time
 from f1score import get_metric_score
 import bert_class
 import roberta_class
@@ -22,6 +23,8 @@ tokenizer = RobertaTokenizer.from_pretrained(model_name)
 
 total_score = 0.0
 
+start_time = time.perf_counter()
+
 with open("model_eval.txt", "r") as file:
     for line in file:
 
@@ -43,4 +46,7 @@ with open("model_eval.txt", "r") as file:
         print("score: " + str(score))
         total_score+=score[1]
 
+end_time = time.perf_counter()
+
+print(f"Ran in {end_time - start_time:0.4f} seconds")
 print("Total score: " + str(total_score))
