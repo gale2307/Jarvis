@@ -7,15 +7,15 @@ title: Final Report
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EB2UiAb8acw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Project Summary
-Jarvis is an End-to-End Question Answering System integrated into Minecraft that answers the player’s questions about the game through the chatbox, using the Minecraft Wikipedia as its database. Using search engines like Google, one can easily find the relevant webpages to the question, but Jarvis takes that a step further and returns the phrase from those webpages that answers the question.
+JARVIS is an End-to-End Question Answering System integrated into Minecraft that answers the player’s questions about the game through the chatbox, using the Minecraft Wikipedia as its database. Using search engines like Google, one can easily find the relevant webpages to the question, but JARVIS takes that a step further and returns the phrase from those webpages that answers the question.
 
-Combining an information retrieval (IR) system with a Question-Answering (QA) model, Jarvis can efficiently search through its corpus. It is able to answer any questions that the Minecraft Wikipedia is able to answer with decent accuracy, as long as that information is stored as text in the website’s html. 
+Combining an information retrieval (IR) system with a Question-Answering (QA) model, JARVIS can efficiently search through its corpus. It is able to answer any questions that the Minecraft Wikipedia is able to answer with decent accuracy, as long as that information is stored as text in the website’s html. 
 
 
 ## Approach
 
 #### IR system
-The baseline for Jarvis’s IR component is the system we used for the status report. It crawls the Minecraft Wiki using BeautifulSoup, saving text snippets from each page and filtering out pages that are not relevant to the Minecraft game (i.e. the spinoff games). After the corpus is complete, Whoosh is used to write an index for the corpus, with a schema based on each page’s literal title and content. Each page’s content is analyzed using Whoosh’s default word analyzer (which uses lowercase filtering and a regex tokenizer) and default stopwords list. Retrieval is also handled with Whoosh. The retriever starts by asking the user to input a query. The query is parsed using Whoosh’s default single-field query parser on the content field, which then passes the parsed query to a searcher, which returns the literal titles of the top 3 pages in the corpus scored by the BM25 ranking system.
+The baseline for JARVIS’s IR component is the system we used for the status report. It crawls the Minecraft Wiki using BeautifulSoup, saving text snippets from each page and filtering out pages that are not relevant to the Minecraft game (i.e. the spinoff games). After the corpus is complete, Whoosh is used to write an index for the corpus, with a schema based on each page’s literal title and content. Each page’s content is analyzed using Whoosh’s default word analyzer (which uses lowercase filtering and a regex tokenizer) and default stopwords list. Retrieval is also handled with Whoosh. The retriever starts by asking the user to input a query. The query is parsed using Whoosh’s default single-field query parser on the content field, which then passes the parsed query to a searcher, which returns the literal titles of the top 3 pages in the corpus scored by the BM25 ranking system.
 
 BM25 is a bag-of-words retrieval function that scores documents by query terms appearing in the document. The function for BM25 looks like: 
 
@@ -45,7 +45,7 @@ On more recent iterations of JARVIS, we attempted to improve on the accuracy and
 ## Evaluation
 #### Quantitative
 
-Quantitatively, Jarvis’s systems were tested individually and combined together. All of our quantitative tests use the same evaluation dataset of 51 questions.
+Quantitatively, JARVIS’s systems were tested individually and combined together. All of our quantitative tests use the same evaluation dataset of 51 questions.
 
 The IR system was tested using a script that takes as an argument a text file with our dataset of queries of queries followed by the expected page to be returned for the query. Our IR system would read this file line-by-line, feed the query into the query processor and searcher, and return the top 3 pages retrieved based on the query. If the expected page was among the top 3 retrieved, we considered that query to be successfully answered by the IR model. The IR model’s overall effectiveness was measured by the amount of queries that successfully had their expected pages returned over the total number of queries.
 
@@ -53,20 +53,20 @@ The QA system was tested using a similar text file-reading script. This time, th
 
 ![F1 equation](img/eq_2.PNG)
 
-The combined Jarvis system was tested similarly to the QA system. The only major difference is that the expected page was not given in the evaluation text file. Both the QA model and the combined system’s overall effectiveness was measured by their total F1 scores and the total runtime of the systems.
+The combined JARVIS system was tested similarly to the QA system. The only major difference is that the expected page was not given in the evaluation text file. Both the QA model and the combined system’s overall effectiveness was measured by their total F1 scores and the total runtime of the systems.
 
 **IR evaluation**  
 *Tests the IR system individually*  
-![Jarvis prototype](img/ir_test_1.PNG)  
+![IR_test](img/ir_test_1.PNG)  
 **achieved 92% accuracy* 
 
 **QA model evaluation**  
 *Test the QA models individually*  
-![Jarvis prototype](img/qa_test_1.PNG)
+![QA_test](img/qa_test_1.PNG)
 
 **JARVIS evaluation**  
 *Test the combination of our IR system with various QA models*  
-![Jarvis prototype](img/combi_test_1.PNG)
+![Jarvis test](img/combi_test_1.PNG)
 
 Having reached a satisfactory accuracy on our IR system, we instead focused on the comparison of performance between the various QA models. For both individual and combined testing, both RoBERTa models proved to be the most promising: RoBERTa-base was extremely fast although less accurate, while RoBERTa-large traded speed for some extra accuracy. As we were not able to find methods to significantly reduce the runtime of RoBERTa-large while keeping its accuracy higher than RoBERTa-base, we decided to use RoBERTa-base as the QA-model for our final iteration of JARVIS.
 
@@ -74,7 +74,7 @@ Having reached a satisfactory accuracy on our IR system, we instead focused on t
 Qualitatively, we used the approach from our status report as a baseline. Since our quantitative tests this time were largely the same as the tests we previously used, we compared the quantitative scores of the two approaches to make sure our model was improving. As this project is also language-based, we had to look at the answers our model was returning manually to ensure that they were at least technically correct. This got us over the main drawback of F1 scoring, which scored the returned answers much more strictly.
 
 Additionally, we also came up with a list of hard questions to challenge our top-performing models. The chart below shows the results for five of such questions  
-![Jarvis prototype](img/ab_result_1.PNG)  
+![ambi_test](img/ab_result_1.PNG)  
 **cells with ‘-’ means no answer was given*
 
 For ambiguous questions, we see the limitation of how AI modes read and understand the sentences. Generally, the accuracy of answers depends on how many words form questions matched. For example, question 1 involves stronger logic structure (consequence after condition), but we still have great accuracy across all models; meanwhile, for question three, without the actual word “avoid” in the query, it is hard for the models to find the correct answer. However, we switched the original phrase “won’t” with “avoid’ and most of our models could return the expected answer. This indicates one of the hardest parts for the NLP model that training an NLP model to analyze and filter synonyms under sentences with similar meaning.
@@ -82,17 +82,6 @@ For ambiguous questions, we see the limitation of how AI modes read and understa
 Another problem in dealing with ambiguous questions is the ability of resolving/analyzing logic structure of question sentences, which shows with question 5 with 2 target objects as factors for the models to locate the correct answer. Since our models do not support actual result/content comparison (locate answers from two sources and make comparison, which is too hard for current ai), we specially chose the context in which the expected answer with two factors show up together (“red fox” and “arctic fox”). All our models return half of the current answer with one of the factors(arctic fox), which indicates the models may not have the ability to equally weigh more than one factor in a sentence (even an “and” shows up) and return a meaningful result for both sides.
 
 Finally, when the question becomes more wild and more than one related answer shows up in different places, the models have a variety of choices, which is also affected by how the model evaluates the candidate result and makes a decision. For question 2 and question 4, it happens when the expected answer appeared in the candidate list but the model decided not to use it as it had a lower score than others.
-
-
-
-
-
-## Remaining Goals and Challenges
-Currently, Jarvis still has a lot of aspects that need to be improved. Our priority will be to improve Jarvis’ accuracy, both for the IR system and the Question Answering model. For the IR, we are looking to implement common methods of improvement such as stemming, removing duplicate pages, and tf-idf. Given sufficient improvements, we are considering the possibility of expanding our corpus (such as by adding articles from Digminecraft), since much of the information in the Minecraft Wikipedia is contained within images (such as crafting recipes, smelting, etc), which Jarvis cannot use. Overall, we are hoping to get our IR system’s accuracy even with, if not close enough to, Google or Minecraft Wiki’s built-in search. For the Question Answering model, we are looking to fine-tune BERT to make it familiar with Minecraft terminology. We are also considering alternatives to BERT, which we will test and compare with BERT’s performance accordingly.
-
-Accuracy aside, we are looking for methods to improve Jarvis’ speed. Currently, the long running time is caused by our BERT model having to go through each article paragraph by paragraph - as such, articles with numerous short paragraphs take a long time to process. Reducing the number of paragraphs by combining them or by filtering out unnecessary paragraphs are methods of improvement that we are looking to test in the near future.
-
-Finally, we will need to integrate Jarvis with the Minecraft Malmo client. While we expect this to be trivial, unforeseen issues may appear. As such, we are planning to work on integration as soon as possible to deal with said issues.
 
 ## Resources Used
 - https://github.com/google-research/bert#pre-trained-models - These pre-trained models for BERT are necessary for having NLP working with JARVIS.
